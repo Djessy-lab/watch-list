@@ -45,6 +45,9 @@ gem "bootsnap", require: false
 gem "autoprefixer-rails"
 gem "font-awesome-sass", "~> 6.1"
 gem "simple_form"
+gem "cloudinary"
+
+
 # Use Sass to process CSS
 gem "sassc-rails"
 
@@ -69,3 +72,4 @@ end
 
 gem 'rspec-rails', group: [ :test ]
 gem 'rails-controller-testing', group: [ :test ]
+gem "dotenv-rails", groups: [:development, :test]

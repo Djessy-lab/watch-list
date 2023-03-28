@@ -1,5 +1,17 @@
-<%= link_to "Créer une liste", new_list_path %>
-<% @lists.each do |list| %>
-  <%= list.name %>
-  <%= list.photo.key %>
-<% end %>
+<h1 class="big-title">Welcome on WatchList 2.0</h1>
+<hr>
+<div class="button">
+  <%= link_to "Créer une liste", new_list_path %>
+</div>
+<br>
+<ul>
+  <% @lists.each do |list| %>
+  <li>
+    <div class="container-fluid movie-card">
+      <div class="trash poub"><%= link_to '<i class="fa-solid fa-trash"></i>'.html_safe, list_path(list), data: {turbo_method: :delete, turbo_confirm: "Are you sure ?"} %></div>
+      <%= link_to list.name, list_path(list), class: "title"%>
+      <%= cl_image_tag list.photo.key, height: 300, width: 300, crop: :scale, class: "img-card" %>
+    </div>
+  </li>
+  <% end %>
+</ul>
